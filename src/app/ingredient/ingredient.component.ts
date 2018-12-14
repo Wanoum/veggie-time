@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient.component.scss']
 })
 export class IngredientComponent implements OnInit {
+  title = "Liste d'ingrédients";
 
   constructor() { }
 
