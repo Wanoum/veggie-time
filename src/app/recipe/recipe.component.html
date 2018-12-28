@@ -22,12 +22,13 @@
     </div>
   </form>
 
-
-  <div class="card-columns">
-    <div class="card" *ngFor="let recipe of recipes">
+  <div class="row">
+    <div class="card col-4" *ngFor="let recipe of recipesList">
       <div class="card-body">
-        <h3><a href="">{{ recipe.recipe.label }}</a></h3>
-        <img src="{{ recipe.recipe.image }}" alt="">
+      <!-- <div class="card-body" (click)="getRecipeDetails(recipe.recipe_id)"> -->
+        <h3><a [routerLink]="['/recette', recipe.recipe_id]">{{ recipe.title }}</a></h3>
+        <p>{{ recipe.recipe_id }}</p>
+        <img src="{{ recipe.image_url }}">
       </div>
     </div>
   </div>

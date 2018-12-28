@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
 
 @Component({
@@ -7,16 +9,28 @@ import { Recipe } from '../models/recipe.model';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss']
 })
+
 export class RecipeComponent implements OnInit {
   title = "Liste de recettes";
 
-  recipes: Recipe[];
+  recipesList: Observable<Recipe[]>;
+  selectedId: number;
+  // recipesList: Recipe[];
+  recipe: Recipe[];
 
-  constructor(private httpClient: HttpClient) {
-    this.httpClient.get<Recipe[]>('https://api.edamam.com/search?q=vegetarian&app_id=d0ad95d2&app_key=634dfa72ea281945eda42389a3209699').subscribe(
-      (result: Recipe[]) => {
-        this.recipes = result.hits[];
-        console.log(this.recipes);
+  apiUrl = "https://www.food2fork.com/api/";
+  apiKey = "5d31ce0bd45e28c4d494fc418525b083";
+  paramsList = new HttpParams().set('key', this.apiKey).set('q', 'vegetarian');
+
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.getRecipes();
+  }
+
+  getRecipes() {
+    // console.log(this.apiUrl + "search?" + this.params);
+    this.httpClient.get<Recipe[]>(this.apiUrl + "search?" + this.paramsList).subscribe(
+      (result: any) => {
+        this.recipesList = result.recipes;
       },
       (error) => {
         console.log(error);
@@ -24,7 +38,18 @@ export class RecipeComponent implements OnInit {
     )
   }
 
-  ngOnInit() {
+  getRecipeDetails(idRecipe) {
+    
+    // this.httpClient.get<Recipe[]>(this.apiUrl + "get?key=" + this.apiKey + "rId=" + idRecipe).subscribe(
+    //   (result: any) => {
+    //     this.recipe = result.recipes;
+    //     console.log(idRecipe);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // )
   }
 
+  ngOnInit() { }
 }
