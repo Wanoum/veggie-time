@@ -1,3 +1,26 @@
-<p>
-  contact works!
-</p>
+<div class="row section-contact">
+  <div class="col col-12">
+    <h2>Contacter les développeurs</h2>
+
+    <div class="form-group">
+      <input [(ngModel)]="contact.email" type="email" class="form-control" placeholder="Votre adresse e-mail...">
+    </div>
+
+    <div class="form-group">
+      <textarea [(ngModel)]="contact.content" class="form-control" cols="20" rows="5" placeholder="Votre message aux développeurs..."></textarea>
+      <p>{{ contact.content.length }} caractères</p>
+    </div>
+
+    <div class="form-group text-center">
+      <input (click)="isSubmitted = true" type="submit" class="btn btn-secondary" value="Envoyer">
+    </div>
+  </div>
+
+  <div class="col col-12 result" *ngIf="isSubmitted == true">
+    <div class="alert alert-success">
+      <p>Votre message est :</p>
+      <p>"{{ contact.content }}"<br/>
+      envoyé de {{ contact.email }}</p>
+    </div>
+  </div>
+</div>

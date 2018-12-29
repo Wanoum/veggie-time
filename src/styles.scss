@@ -39,6 +39,7 @@ body {
         transform: translate(-50%, -50%);
     }
 
+    /* Common styles */
     .navbar {
         display: block;
         text-align: center;
@@ -91,6 +92,8 @@ body {
         }
 
         .navbar-collapse {
+            justify-content: center;
+            
             .nav-item {
                 text-align: center;
                 

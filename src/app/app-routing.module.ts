@@ -7,12 +7,12 @@ import { ContactComponent } from './contact/contact.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
-  {path: '', component: MainComponent},
+  {path: '', component: MainComponent}, // Default route
   {path: 'recettes', component: RecipeComponent},
   {path: 'ingredients', component: IngredientComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'recette/:recipe_id', component: RecipeDetailComponent},
-  {path: '**', redirectTo: 'recettes'}
+  {path: 'recette/:recipe_id', component: RecipeDetailComponent}, // Give a param to the url
+  {path: '**', redirectTo: 'recettes'} // If link is broken, redirect to recettes
 ];
 
 @NgModule({

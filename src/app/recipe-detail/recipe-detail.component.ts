@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
 
@@ -20,10 +20,12 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) { }
 
+  // Calls the API URL which displays a single page information of a recipe
   getRecipeDetail(recipe_id) {
     this.httpClient.get<Recipe[]>(this.apiUrl + "get?key=" + this.apiKey + "&rId=" + this.recipe_id).subscribe(
       (result: any) => {
         this.recipe = result.recipe;
+        // The result from the API is an object which contains an array recipe with the informations
       },
       (error) => {
         console.log(error);
@@ -31,9 +33,10 @@ export class RecipeDetailComponent implements OnInit {
     )
   }
 
+  // When page is initialized, get the recipe id that was sent thanks to the param in the URL
   ngOnInit() {
     let recipe_id = this.route.snapshot.paramMap.get('recipe_id');
-    this.recipe_id = recipe_id;
-    this.getRecipeDetail(recipe_id);
+    this.recipe_id = recipe_id; // Get the recipe id from the URL param and load it in the local recipe_id variable
+    this.getRecipeDetail(this.recipe_id); // Display the detail
   }
 }
