@@ -1,3 +1,119 @@
-img {
-    max-width: 100%;
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:500');
+
+$black: #2D2A32;
+$red: #F55F41;
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato';
+    color: $black;
+
+    /* Redefining bootstrap style */
+    .btn.btn-primary {
+        background-color: $red;
+        border: none;
+        border-radius: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .btn.btn-secondary {
+        background-color: $black;
+        border: none;
+        border-radius: 26px;
+        padding: 10px 25px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    /* Reusable classes */
+    .img-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar {
+        display: block;
+        text-align: center;
+        position: relative;
+        background-color: #FFF;
+        border-bottom: 1px solid #F8F8F8;
+
+        @media screen and (min-width: 768px) {
+            padding-top: 20px;
+        }
+        
+        .navbar-brand {
+            margin-right: 5px;
+            padding: 0;
+
+            font-family: 'Montserrat';
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $black;
+
+            @media screen and (min-width: 768px) {
+                font-size: 20px;
+            }
+        }
+
+        .navbar-toggler {
+            position: absolute;
+            right: 8px;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+
+            .navbar-toggler-icon-custom {
+                width: 12px;
+                height: 14px;
+                display: flex;
+                justify-content: space-between;
+
+                img {
+                    width: 2px;
+                    height: 10px;
+
+                    &:nth-child(2) {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+
+        .navbar-collapse {
+            .nav-item {
+                text-align: center;
+                
+                a {
+                    color: $black;
+                    font-size: 14px;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 16px;
+                        transition: 0.2s ease-in-out color;
+
+                        &:hover {
+                            color: $red;
+                            text-decoration: underline;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
 }

@@ -1,0 +1,27 @@
+.container-recipe {
+    .container-recipe-img {
+        margin-bottom: 10px;
+        height: 15vh;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .recipe-title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2px;
+    }
+
+    .recipe-publisher {
+        text-align: center;
+    }
+}

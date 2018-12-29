@@ -8,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title = "Veggie Time";
 
+  // Dropdown navbar not working
+  isCollapsed = true;
+  
   constructor() { }
+
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
   ngOnInit() {
   }

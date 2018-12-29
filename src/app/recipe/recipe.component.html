@@ -1,35 +1,25 @@
-<div class="row">
-  <div class="col-12 jumbotron">
-    <div class="row">
-      <div class="col-8">
-        <h1>{{ title }}</h1>
-      </div>
-      
-      <div class="col-4">
-        <button class="btn btn-success"><i class="fas fa-plus"></i> Ajouter une recette</button>
-      </div>
+<div class="section-recipes">
+  <div class="row">
+    <div class="col col-12 add-recipe">
+      <button class="btn btn-primary">+ Ajouter une recette</button>
     </div>
   </div>
 
-  <form>
-    <div class="form-group">
-      <label for="searchOnRecipe">Recherche </label>
-      <input type="text" class="form-control" id="searchOnRecipe" placeholder="Entrer le nom d'une recette">
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-primary">Rechercher</button>
-    </div>
-  </form>
-
   <div class="row">
-    <div class="card col-4" *ngFor="let recipe of recipesList">
-      <div class="card-body">
-      <!-- <div class="card-body" (click)="getRecipeDetails(recipe.recipe_id)"> -->
-        <h3><a [routerLink]="['/recette', recipe.recipe_id]">{{ recipe.title }}</a></h3>
-        <p>{{ recipe.recipe_id }}</p>
-        <img src="{{ recipe.image_url }}">
+    <div class="col col-lg-3 col-md-4 col-sm-6 col-6 container-recipe" *ngFor="let recipe of recipesList" [routerLink]="['/recette', recipe.recipe_id]">
+      <div class="container-recipe-img">
+        <img src="{{ recipe.image_url }}" class="img-center">
       </div>
+
+      <p class="recipe-title"><a>{{ recipe.title }}</a></p>
     </div>
+
+    <!-- <div class="col col-lg-3 col-md-4 col-sm-6 col-6">
+      <div class="container-recipe-img">
+        <img src="http://static.food2fork.com/quinoachili15b76.jpg" class="img-center">
+      </div>
+
+      <p><a>hello girl</a></p>
+    </div> -->
   </div>
 </div>
