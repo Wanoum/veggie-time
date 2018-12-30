@@ -13,6 +13,9 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { ContactComponent } from './contact/contact.component';
 import { FilterByNamePipe } from './filter-by-name.pipe';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { IngredientDetailComponent } from './ingredient-detail/ingredient-detail.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { FilterByNamePipe } from './filter-by-name.pipe';
     MainComponent,
     ContactComponent,
     RecipeDetailComponent,
-    FilterByNamePipe
+    FilterByNamePipe,
+    AddRecipeComponent,
+    IngredientDetailComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

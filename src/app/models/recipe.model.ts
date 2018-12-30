@@ -1,4 +1,4 @@
-import { IngredientComponent } from '../ingredient/ingredient.component';
+import { Ingredient } from './ingredient.model';
 
 export class Recipe {
     // Same names as properties of the API
@@ -8,5 +8,5 @@ export class Recipe {
     source_url: string;
     publisher: string;
     publisher_url: string;
-    ingredients: IngredientComponent;
+    ingredients: Ingredient[];
 }

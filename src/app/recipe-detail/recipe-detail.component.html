@@ -4,12 +4,15 @@
   </div>
 
   <div class="col col-12">
-    <h2 class="recipe-title">{{ recipe.title }}</h2>
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
     <p class="recipe-publisher">{{ recipe.publisher }}</p>
   </div>
 
   <div class="col col-12">
     <p>You'll need these ingredients:</p>
+    <ul>
+      <li *ngFor="let ingredient of ingredientsList">{{ ingredient }}</li>
+    </ul>
   </div>
 
   <div class="col col-12 text-center">

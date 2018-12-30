@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
+import { Ingredient } from '../models/ingredient.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -12,11 +13,12 @@ import { Recipe } from '../models/recipe.model';
 export class RecipeDetailComponent implements OnInit {
   recipe_id: string;
   recipe: Recipe[];
+  ingredientsList: Ingredient[];
 
   apiUrl = "https://www.food2fork.com/api/";
   // Change between two keys if usage is > 50/day
-  // apiKey = "f819bf2db90bef2af7caa780c39cb86b";
-  apiKey = "5d31ce0bd45e28c4d494fc418525b083";
+  apiKey = "f819bf2db90bef2af7caa780c39cb86b";
+  // apiKey = "5d31ce0bd45e28c4d494fc418525b083";
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) { }
 
@@ -26,6 +28,7 @@ export class RecipeDetailComponent implements OnInit {
       (result: any) => {
         this.recipe = result.recipe;
         // The result from the API is an object which contains an array recipe with the informations
+        this.ingredientsList = result.recipe.ingredients;
       },
       (error) => {
         console.log(error);

@@ -1,0 +1,47 @@
+$white: #ffffff;
+$grey: #cecece;
+
+.section-navigation {
+    width: 50vw;
+    height: 100vh;
+    background-image: url('../../assets/images/bg2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            transition: 0.2s ease-in-out all;
+
+            &:hover, &:active {
+                color: $grey;
+            }
+        }
+
+        .container-title {
+            h1 {
+                font-family: 'Alex Brush';
+                font-size: 3.8em;
+            }
+        }
+
+        nav {
+            ul {
+                padding: 0;
+                list-style: none;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -17,9 +17,5 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  showResponse() {
-    this.isSubmitted = true;
-  }
-
   ngOnInit() { }
 }
