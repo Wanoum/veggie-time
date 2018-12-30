@@ -1,15 +1,9 @@
 <div class="section-navigation">
-  <div class="overlay">
-    <div class="container-title">
-      <h1><a href="/">Veggie Time</a></h1>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="/recettes">Recettes</a></li>
-        <li><a href="/ingredients">Ingrédients</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/" [routerLinkActive]="['active-route', 'red']">Recettes</a></li>
+      <li><a routerLink="/ingredients" routerLinkActive="active-route green">Ingrédients</a></li>
+      <li><a routerLink="/aide" routerLinkActive="active-route yellow" class="help">?</a></li>
+    </ul>
+  </nav>
 </div>

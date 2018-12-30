@@ -1,0 +1,10 @@
+@import "../../colors";
+@import "../../mixins";
+
+.section-help {
+    padding: 0 25%;
+
+    h2, a {
+        color: $yellow-dark;
+    }
+}
