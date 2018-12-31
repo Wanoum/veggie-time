@@ -1,77 +1,28 @@
 <div class="row container-recipe">
   <div class="col col-12 col-md-6">
     <div class="container-img">
-      <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="img-center">
+      <img src="{{ recipe.image_url }}" class="img-center">
     </div>
   </div>
 
   <div class="col col-12 col-md-6">
     <div class="container-recipe">
       <div class="recipe-header">
-        <h3>Tacos and chips and nachos</h3>
-        <p class="recipe-publisher"><a href="">Foood3Fork</a></p>
+        <h3>{{ recipe.title }}</h3>
+        <p class="recipe-publisher"><a href="{{ recipe.publisher_url }}" target="_blank">{{ recipe.publisher }}</a></p>
       </div>
 
       <div class="recipe-ingredients">
         <p>You’ll need these ingredients :</p>
 
         <div class="row">
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
+          <div class="col col-lg-4 col-sm-6 col-6 container-ingredient" *ngFor="let ingredient of ingredientsList">
             <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
-            </div>
-          </div>
-          <div class="col col-md-4 col-sm-6 col-6 container-ingredient">
-            <div class="card">
-              cvhbkjlnk,ml;m
+              {{ ingredient }}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div class="col col-12 container-recipe-img">
-    <img src="{{ recipe.image_url }}">
-  </div>
-
-  <div class="col col-12">
-    <h1 class="recipe-title">{{ recipe.title }}</h1>
-    <p class="recipe-publisher">{{ recipe.publisher }}</p>
-  </div>
-
-  <div class="col col-12">
-    <p>You'll need these ingredients:</p>
-    <ul>
-      <li *ngFor="let ingredient of ingredientsList">{{ ingredient }}</li>
-    </ul>
-  </div>
-
-  <div class="col col-12 text-center">
-    <a class="btn btn-secondary" href="{{ recipe.publisher_url }}" target="_blank">Site de l'annonceur</a>
-  </div> -->
 </div>
