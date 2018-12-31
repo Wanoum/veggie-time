@@ -18,8 +18,8 @@ export class RecipeComponent implements OnInit {
 
   apiUrl = "https://www.food2fork.com/api/";
   // Change between two keys if usage is > 50/day
-  apiKey = "f819bf2db90bef2af7caa780c39cb86b";
-  // apiKey = "5d31ce0bd45e28c4d494fc418525b083";
+  // apiKey = "f819bf2db90bef2af7caa780c39cb86b";
+  apiKey = "5d31ce0bd45e28c4d494fc418525b083";
   paramsList = new HttpParams().set('key', this.apiKey).set('q', 'vegetarian'); // params sent to the URL
 
   constructor(private httpClient: HttpClient, private router: Router) {

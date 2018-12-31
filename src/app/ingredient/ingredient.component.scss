@@ -1,13 +1,17 @@
+@import "../../colors";
+@import "../../mixins";
+
 .section-ingredients {
-    margin-top: 20px;
-    
     .container-ingredient {
         .card {
-            display: flex;
-            justify-content: center;
-            padding: 10px 15px;
-            text-align: center;
             margin-bottom: 20px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 8px 26px rgba(45, 42, 50, 0.1);
+            border-radius: 12px;
+            color: $green;
+            font-weight: 600;
+            border: none;
         }
     }
 }

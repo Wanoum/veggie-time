@@ -14,6 +14,13 @@ body {
 
     .wrapper {
         padding: 40px 70px 70px;
+        
+        @media screen and (max-width: 768px) {
+            padding: 40px 40px 40px;
+        }
+        @media screen and (max-width: 576px) {
+            padding: 40px 30px 40px;
+        }
 
         a {
             text-decoration: none;
@@ -24,10 +31,63 @@ body {
             font-size: 2.2em;
             text-align: center;
             margin-bottom: 10px;
+
+            @media screen and (max-width: 576px) {
+                font-size: 1.6em;
+            }
         }
 
         img {
             max-width: 100%;
+        }
+
+        .img-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            border-radius: 24px;
+            font-size: 0.9em;
+            transition: 0.2s ease-in-out all;
+
+            &.btn-primary {
+                background-color: $red;
+                box-shadow: 0 6px 16px rgba(255, 79, 107, 0.4);
+
+                &:hover {
+                    box-shadow: 0 6px 16px rgba(255, 79, 107, 0.5);
+                }
+            }
+
+            &.btn-secondary {
+                background-color: $black;
+                box-shadow: 0 6px 16px rgba(45, 42, 49, 0.4);
+
+                &:hover {
+                    box-shadow: 0 6px 16px rgba(45, 42, 49, 0.5);
+                }
+            }
+        }
+
+        .form-control {
+            padding: 20px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: $black;
+            outline: none;
+            border: 1px solid $grey-light;
+            box-shadow: none;
+
+            &::placeholder {
+                color: $grey;
+            }
         }
     }
 }

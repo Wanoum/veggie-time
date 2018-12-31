@@ -1,27 +1,62 @@
-.container-recipe {
-    .container-recipe-img {
-        margin-bottom: 10px;
-        height: 15vh;
-        overflow: hidden;
-        position: relative;
+@import "../../colors";
+@import "../../mixins";
 
-        img {
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+.container-recipe {
+    .container-img {
+        position: relative;
+        overflow: hidden;
+        height: 65vh;
+        border-radius: 14px;
+        box-shadow: 0 25px 46px rgba(45, 42, 50, 0.3);
+
+        @media screen and (max-width: 767px) {
+            max-height: 45vh;
+            margin-bottom: 30px;
+        }
+        @media screen and (max-width: 576px) {
+            max-height: 25vh;
         }
     }
 
-    .recipe-title {
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 2px;
-    }
+    .container-recipe {
+        .recipe-header {
+            h3 {
+                font-size: 1.7em;
+                font-weight: 700;
+                margin-bottom: 10px;
 
-    .recipe-publisher {
-        text-align: center;
+                @media screen and (max-width: 576px) {
+                    font-size: 1.4em;
+                    margin-bottom: 5px;
+                }
+            }
+
+            a {
+                color: $red;
+            }
+
+            @media screen and (max-width: 767px) {
+                text-align: center;
+            }
+        }
+
+        .recipe-publisher {
+            font-weight: 600;
+        }
+
+        .recipe-ingredients {
+            margin-top: 30px;
+
+            .card {
+                margin-bottom: 20px;
+                padding: 15px 10px;
+                text-align: center;
+                box-shadow: 0 8px 26px rgba(45, 42, 50, 0.1);
+                border-radius: 12px;
+                // color: $green;
+                font-weight: 600;
+                border: none;
+            }
+        }
     }
 }

@@ -6,14 +6,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { ContactComponent } from './contact/contact.component';
 import { FilterByNamePipe } from './filter-by-name.pipe';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
-import { IngredientDetailComponent } from './ingredient-detail/ingredient-detail.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HelpComponent } from './help/help.component';
 
@@ -22,12 +20,10 @@ import { HelpComponent } from './help/help.component';
     AppComponent,
     RecipeComponent,
     IngredientComponent,
-    MainComponent,
     ContactComponent,
     RecipeDetailComponent,
     FilterByNamePipe,
     AddRecipeComponent,
-    IngredientDetailComponent,
     NavigationComponent,
     HelpComponent
   ],

@@ -2,7 +2,9 @@
 @import "../../mixins";
 
 .section-help {
-    padding: 0 25%;
+    @media screen and (min-width: 992px) {
+        padding: 0 25%;
+    }
 
     h2, a {
         color: $yellow-dark;

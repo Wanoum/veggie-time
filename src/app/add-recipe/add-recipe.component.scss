@@ -1,0 +1,12 @@
+@import "../../colors";
+@import "../../mixins";
+
+.section-add-recipe {
+    h2 {
+        color: $red;
+    }
+
+    .response {
+        margin-top: 30px;
+    }
+}

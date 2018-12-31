@@ -1,6 +1,6 @@
 <div class="row section-add-recipe">
   <div class="col col-12">
-    <h1>Ajouter une recette</h1>
+    <h2 class="red">Ajouter une recette</h2>
   </div>
 
   <div class="col col-12">
@@ -24,10 +24,10 @@
     </div>
   </div>
   <div class="col col-12 text-center">
-    <input (click)="isSubmitted = true" type="submit" class="btn btn-secondary" value="Ajouter">    
+    <input (click)="isSubmitted = true" type="submit" class="btn btn-primary" value="Ajouter">    
   </div>
 
-  <div class="col col-12" *ngIf="isSubmitted == true">
+  <div class="col col-12 response" *ngIf="isSubmitted == true">
     <div class="alert alert-success">
       <p>Vous avez ajouté la recette :</p>
       <h3>{{ recipe.title }}</h3>
